@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<title>SCHOOL MANAGEMENT</title>
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-static-top">
+		<ul class="nav navbar-nav">
+			<li><a class="navbar-brand" href="{% url 'basic_app:list' %}">school list</a></li>
+			
+		</ul>
+	</nav>
+<div class="container">
+	{% block body_block %}
+	{% endblock %}
+</div>
+</body>
+</html>
