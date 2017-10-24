@@ -13,12 +13,5 @@ class School(models.Model):
     def __str__(self):
         return self.name
 
-class Student(models.Model):
-    name =models.CharField(max_length=264)
-    age =models.PositiveIntegerField()
-    school =models.ForeignKey(School,related_name='student')
-
-    def __str__(self):
-        return self.name
 
 

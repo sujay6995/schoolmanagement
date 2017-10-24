@@ -15,9 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-from basic_app import views
+from register import views
+from basic_app2 import views as ba2v
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$',views.IndexView.as_view()),
-    url(r'^basic_app/',include('basic_app.urls'),name='basic_app')
+    url(r'^$',views.index,name='index'),
+    url(r'^basic_app/',include('basic_app.urls'),name='basic_app'),
+    url(r'^basic_app2/',include('basic_app2.urls'),name='basic_app2'),
+    url(r'^register/',include('register.urls'),name='register'),
+    url(r'^captcha/', include('captcha.urls')),
+    url(r'^logout/$', views.user_logout,name='user_logout'),
 ]

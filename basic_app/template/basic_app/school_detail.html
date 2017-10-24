@@ -9,8 +9,11 @@
 
     <h3>students:</h3>
      {% for student in school_detail.student.all %}
-        <p>{{student.name}} who is {{student.age}} years old</p>
+	<p>{{student.name}} who is {{student.age}} years old<a class="btn btn-danger" href="{% url 'basic_app2:delete' pk=student.pk %}">delete</a></p>
      {% endfor %}
+	<p>
+	 <a class="btn btn-success" href="{% url 'basic_app2:create' %}">Create</a>
+	</p>
 </div>
 <div class="container" >
 	<p><a class="btn btn-warning" href="{% url 'basic_app:update' pk=school_detail.pk %}">update</a>

@@ -16,6 +16,8 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR,'template')
 BA_TEMPLATE_DIR = os.path.join(BASE_DIR,'basic_app\\template')
+BA2_TEMPLATE_DIR = os.path.join(BASE_DIR,'basic_app2\\template')
+REGISTER_TEMPLATE_DIR = os.path.join(BASE_DIR,'register\\template')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -38,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'basic_app'
+    'basic_app',
+    'basic_app2',
+    'register',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +61,7 @@ ROOT_URLCONF = 'schoolmanagement.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,BA_TEMPLATE_DIR],
+        'DIRS': [TEMPLATE_DIR,BA_TEMPLATE_DIR,BA2_TEMPLATE_DIR,REGISTER_TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
